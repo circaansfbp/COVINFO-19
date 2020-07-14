@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReporteDiario"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="Reporte Diario Nacional"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceHeadline4"
+                        android:textColor="@color/colorAccent"></TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text="Fecha:"
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/fecha_reporte"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="Casos acumulados:"
+                        android:textAlignment="textStart"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorAccent"></TextView>
+
+                    <TextView
+                        android:id="@+id/total_casos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorPrimary"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="Total casos nuevos:"
+                        android:textAlignment="textStart"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorAccent"></TextView>
+
+                    <TextView
+                        android:id="@+id/casos_nuevos_totales"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorPrimary"></TextView>
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <com.anychart.AnyChartView
+                    android:id="@+id/any_chart_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text="Fallecidos:"
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="Casos activos:"
+                        android:textAlignment="textStart"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorAccent"></TextView>
+
+                    <TextView
+                        android:id="@+id/casos_activos_confirmados"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textColor="@color/colorPrimary"></TextView>
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
