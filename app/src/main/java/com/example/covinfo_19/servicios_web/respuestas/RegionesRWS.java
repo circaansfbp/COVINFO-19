@@ -1,23 +1,22 @@
 package com.example.covinfo_19.servicios_web.respuestas;
 
-import com.example.covinfo_19.servicios_web.Reporte;
+import com.example.covinfo_19.servicios_web.Region;
 
+import java.util.Arrays;
 import java.util.Objects;
 
-public class NacionalRSW {
+public class RegionesRWS {
     private String info;
-    private String fecha;
     private boolean estado;
-    private Reporte reporte;
+    private Region[] regiones;
 
-    public NacionalRSW() { }
-
-    public NacionalRSW(String info, String fecha, boolean estado, Reporte reporte) {
+    public RegionesRWS(String info, boolean estado, Region[] regiones) {
         this.info = info;
-        this.fecha = fecha;
         this.estado = estado;
-        this.reporte = reporte;
+        this.regiones = regiones;
     }
+
+    public RegionesRWS() { }
 
     public String getInfo() {
         return info;
@@ -25,14 +24,6 @@ public class NacionalRSW {
 
     public void setInfo(String info) {
         this.info = info;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
     }
 
     public boolean isEstado() {
@@ -43,37 +34,37 @@ public class NacionalRSW {
         this.estado = estado;
     }
 
-    public Reporte getReporte() {
-        return reporte;
+    public Region[] getRegiones() {
+        return regiones;
     }
 
-    public void setReporte(Reporte reporte) {
-        this.reporte = reporte;
+    public void setRegiones(Region[] regiones) {
+        this.regiones = regiones;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NacionalRSW that = (NacionalRSW) o;
+        RegionesRWS that = (RegionesRWS) o;
         return estado == that.estado &&
                 Objects.equals(info, that.info) &&
-                Objects.equals(fecha, that.fecha) &&
-                Objects.equals(reporte, that.reporte);
+                Arrays.equals(regiones, that.regiones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(info, fecha, estado, reporte);
+        int result = Objects.hash(info, estado);
+        result = 31 * result + Arrays.hashCode(regiones);
+        return result;
     }
 
     @Override
     public String toString() {
-        return "NacionalRSW{" +
+        return "RegionesRWS{" +
                 "info='" + info + '\'' +
-                ", fecha='" + fecha + '\'' +
                 ", estado=" + estado +
-                ", reporte=" + reporte +
+                ", regiones=" + Arrays.toString(regiones) +
                 '}';
     }
 }
