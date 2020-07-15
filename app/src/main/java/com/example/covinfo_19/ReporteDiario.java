@@ -15,7 +15,7 @@ import com.anychart.enums.Align;
 import com.anychart.enums.LegendLayout;
 
 import com.example.covinfo_19.servicios_web.ServicioWeb;
-import com.example.covinfo_19.servicios_web.info_nacional.NacionalRSW;
+import com.example.covinfo_19.servicios_web.respuestas.RespuestaWS;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,14 +63,14 @@ public class ReporteDiario extends AppCompatActivity {
 
     /**Método que realiza la petición al servicio web para recuperar los datos correspondientes al reporte diario.*/
     private void requestData() {
-        final Call<NacionalRSW> respuesta = servicio.getNationalData();
-        respuesta.enqueue(new Callback<NacionalRSW>() {
+        final Call<RespuestaWS> respuesta = servicio.getNationalData();
+        respuesta.enqueue(new Callback<RespuestaWS>() {
             @Override
-            public void onResponse(Call<NacionalRSW> call, Response<NacionalRSW> response) {
+            public void onResponse(Call<RespuestaWS> call, Response<RespuestaWS> response) {
                 if (response != null && response.body() != null) {
-                    NacionalRSW datos = response.body();
+                    RespuestaWS datos = response.body();
 
-                    /**Se setean los textos en las views de acuerdo a los datos recibidos en la respuesta del servicio web.*/
+                    /**Se setean los textos en los TextView de acuerdo a los datos recibidos en la respuesta del servicio web.*/
                     fechaReporte.setText(datos.getFecha());
                     casosTotales.setText(String.valueOf(datos.getReporte().getAcumulado_total()));
                     casosNuevosTotales.setText(String.valueOf(datos.getReporte().getCasos_nuevos_total()));
@@ -83,7 +83,7 @@ public class ReporteDiario extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<NacionalRSW> call, Throwable t) {
+            public void onFailure(Call<RespuestaWS> call, Throwable t) {
                 Log.d("retrofit", "Error: " + t.getMessage());
             }
         });
@@ -91,7 +91,7 @@ public class ReporteDiario extends AppCompatActivity {
 
     /**Crea un diagrama Pie que encapsula la distribución de casos nuevos, mostrando el porcentaje de casos nuevos con síntomas, sin síntomas
      * y los casos nuevos sin notificar.*/
-    private void createChart(NacionalRSW datos) {
+    private void createChart(RespuestaWS datos) {
         anyChartView = findViewById(R.id.any_chart_view);
         pie = AnyChart.pie();
 

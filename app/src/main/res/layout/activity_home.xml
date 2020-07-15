@@ -100,37 +100,21 @@
                         android:textAppearance="?attr/textAppearanceHeadline5"
                         android:textColor="@color/colorAccent"></TextView>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/outlinedTextField"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:hint="Ingrese el nombre de la región"
-                        android:textColorHint="@color/colorAccent"
-                        app:endIconMode="clear_text"
-                        app:helperTextEnabled="true"
-                        app:helperText="Ejemplo: Ñuble"
-                        app:helperTextTextColor="@color/colorPrimary"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/región_input"
+                        <Spinner
+                            android:id="@+id/lista_regiones"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/colorAccent"
-                            />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/estadisticas_de_una_region"
-                        style="?attr/borderlessButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alef_bold"
-                        android:text="Buscar"
-                        android:textSize="16dp"
-                        android:layout_gravity="center"/>
+                            android:fontFamily="@font/alef_bold"
+                            android:dropDownWidth="match_parent"
+                            android:spinnerMode="dialog"
+                            android:background="@color/colorPrimary"></Spinner>
+                    </LinearLayout>
 
                 </LinearLayout>
 

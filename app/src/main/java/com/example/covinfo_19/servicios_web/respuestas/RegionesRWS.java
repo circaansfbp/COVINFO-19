@@ -1,4 +1,6 @@
-package com.example.covinfo_19.servicios_web.info_por_region;
+package com.example.covinfo_19.servicios_web.respuestas;
+
+import com.example.covinfo_19.servicios_web.Region;
 
 import java.util.Arrays;
 import java.util.Objects;

@@ -1,16 +1,18 @@
-package com.example.covinfo_19.servicios_web.info_nacional;
+package com.example.covinfo_19.servicios_web.respuestas;
+
+import com.example.covinfo_19.servicios_web.Reporte;
 
 import java.util.Objects;
 
-public class NacionalRSW {
+public class RespuestaWS {
     private String info;
     private String fecha;
     private boolean estado;
     private Reporte reporte;
 
-    public NacionalRSW() { }
+    public RespuestaWS() { }
 
-    public NacionalRSW(String info, String fecha, boolean estado, Reporte reporte) {
+    public RespuestaWS(String info, String fecha, boolean estado, Reporte reporte) {
         this.info = info;
         this.fecha = fecha;
         this.estado = estado;
@@ -53,7 +55,7 @@ public class NacionalRSW {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NacionalRSW that = (NacionalRSW) o;
+        RespuestaWS that = (RespuestaWS) o;
         return estado == that.estado &&
                 Objects.equals(info, that.info) &&
                 Objects.equals(fecha, that.fecha) &&
