@@ -1,6 +1,4 @@
-package com.example.covinfo_19.servicios_web.respuestas;
-
-import com.example.covinfo_19.servicios_web.Reporte;
+package com.example.covinfo_19.servicios_web.info_nacional;
 
 import java.util.Objects;
 

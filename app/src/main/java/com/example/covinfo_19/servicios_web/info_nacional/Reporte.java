@@ -1,4 +1,4 @@
-package com.example.covinfo_19.servicios_web;
+package com.example.covinfo_19.servicios_web.info_nacional;
 
 import java.util.Objects;
 

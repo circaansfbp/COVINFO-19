@@ -1,7 +1,6 @@
 package com.example.covinfo_19;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +15,7 @@ import com.anychart.enums.Align;
 import com.anychart.enums.LegendLayout;
 
 import com.example.covinfo_19.servicios_web.ServicioWeb;
-import com.example.covinfo_19.servicios_web.respuestas.NacionalRSW;
+import com.example.covinfo_19.servicios_web.info_nacional.NacionalRSW;
 
 import java.util.ArrayList;
 import java.util.List;
