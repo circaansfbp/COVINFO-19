@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/activity5"
+        android:orderInCategory="100"
+        android:title=".::menu::."
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/activity1"
+        android:orderInCategory="100"
+        android:title="Inicio"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/activity2"
+        android:orderInCategory="100"
+        android:title="Reporte Nacional"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/activity3"
+        android:orderInCategory="100"
+        android:title="Reporte de una Región"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/activity4"
+        android:orderInCategory="100"
+        android:title="Reporte por Regiones"
+        app:showAsAction="never" />
+
+</menu>

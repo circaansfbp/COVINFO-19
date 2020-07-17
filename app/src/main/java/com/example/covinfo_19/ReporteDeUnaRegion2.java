@@ -12,15 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.example.covinfo_19.servicios_web.ServicioWeb;
-import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.covinfo_19.servicios_web.ServicioWeb;
+import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,9 +26,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Home extends AppCompatActivity {
+public class ReporteDeUnaRegion2 extends AppCompatActivity {
+
     private ServicioWeb servicio;
-    private Button nationalStatisticsBtn;
     private Spinner listaRegiones;
     private List<String> nombreRegiones = new ArrayList<>();
     private int regionID;
@@ -38,16 +36,8 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_reporte_de_una_region2);
 
-        /**Se infla el botón que llevará a las estadísticas nacionales*/
-        nationalStatisticsBtn = findViewById(R.id.estadisticas_nacionales);
-        nationalStatisticsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initEstadisticasNacionales();
-            }
-        });
 
         /**Se llama a la librería para que se creen los objetos al hacer la llamada al servicio web.*/
         Retrofit retrofit = new Retrofit.Builder().baseUrl(" http://covid.unnamed-chile.com/api/")
@@ -156,6 +146,7 @@ public class Home extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+        //return super.onCreateOptionsMenu(menu);
     }
 
     /**casos de seleccion del menu*/
@@ -163,19 +154,19 @@ public class Home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.activity1:
-                Intent intent = new Intent(Home.this, Home.class);
+                Intent intent = new Intent(ReporteDeUnaRegion2.this, Home.class);
                 startActivity(intent);
                 return false;
             case R.id.activity2:
-                Intent intent2 = new Intent(Home.this, ReporteDiario.class);
+                Intent intent2 = new Intent(ReporteDeUnaRegion2.this, ReporteDiario.class);
                 startActivity(intent2);
                 return false;
             case R.id.activity3:
-                Intent intent3 = new Intent(Home.this, ReporteDeUnaRegion2.class);
+                Intent intent3 = new Intent(ReporteDeUnaRegion2.this, ReporteDeUnaRegion2.class);
                 startActivity(intent3);
                 return false;
             case R.id.activity4:
-                Intent intent4 = new Intent(Home.this, ReporteDeUnaRegion.class);
+                Intent intent4 = new Intent(ReporteDeUnaRegion2.this, ReporteDeUnaRegion2.class);
                 /**cambiar por clase reporte de todas las regiones*/
                 startActivity(intent4);
                 return false;

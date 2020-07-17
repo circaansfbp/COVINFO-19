@@ -1,10 +1,14 @@
 package com.example.covinfo_19;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.anychart.AnyChart;
@@ -127,6 +131,39 @@ public class ReporteDeUnaRegion extends AppCompatActivity {
                 .align(Align.CENTER);
 
         anyChartView.setChart(pie);
+    }
+
+    /**creacion e inflacion del menu*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    /**casos de seleccion del menu*/
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.activity1:
+                Intent intent = new Intent(ReporteDeUnaRegion.this, Home.class);
+                startActivity(intent);
+                return false;
+            case R.id.activity2:
+                Intent intent2 = new Intent(ReporteDeUnaRegion.this, ReporteDiario.class);
+                startActivity(intent2);
+                return false;
+            case R.id.activity3:
+                Intent intent3 = new Intent(ReporteDeUnaRegion.this, ReporteDeUnaRegion2.class);
+                startActivity(intent3);
+                return false;
+            case R.id.activity4:
+                Intent intent4 = new Intent(ReporteDeUnaRegion.this, ReporteDeUnaRegion2.class);
+                /**cambiar por clase reporte de todas las regiones*/
+                startActivity(intent4);
+                return false;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
