@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ReporteDeUnaRegion"></activity>
+        <activity android:name=".comparativa_regiones.Fallecidos"></activity>
+        <activity android:name=".comparativa_regiones.CasosActivosConfirmados" />
+        <activity android:name=".comparativa_regiones.CasosNuevos" />
+        <activity android:name=".comparativa_regiones.CasosAcumulados" />
+        <activity android:name=".ReporteDeUnaRegion" />
         <activity android:name=".ReporteDiario" />
         <activity android:name=".Home">
             <intent-filter>

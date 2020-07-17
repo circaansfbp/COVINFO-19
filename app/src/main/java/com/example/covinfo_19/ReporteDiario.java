@@ -1,7 +1,9 @@
 package com.example.covinfo_19;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -101,7 +103,7 @@ public class ReporteDiario extends AppCompatActivity {
         chartData.add(new ValueDataEntry("Casos nuevos sin notificar", datos.getReporte().getCasos_nuevos_snotificar()));
 
         pie.data(chartData);
-        pie.title("Distribución de casos nuevos a la fecha");
+        pie.title("Distribución de casos nuevos a la fecha (%)");
         pie.labels().position("outside");
 
         pie.legend().title().enabled(true);
@@ -115,5 +117,30 @@ public class ReporteDiario extends AppCompatActivity {
                 .align(Align.CENTER);
 
         anyChartView.setChart(pie);
+    }
+
+    /**Al presionar el botón para ir atrás, confirma si realmente desea salir de la aplicación.*/
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder msg = new AlertDialog.Builder(this);
+        msg.setTitle("Salir de la aplicación");
+        msg.setMessage("¿Está seguro de querer salir de la aplicación?");
+
+        msg.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        msg.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog showMsg = msg.create();
+        showMsg.show();
     }
 }

@@ -1,7 +1,9 @@
 package com.example.covinfo_19;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.example.covinfo_19.comparativa_regiones.CasosAcumulados;
 import com.example.covinfo_19.servicios_web.ServicioWeb;
 import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
@@ -26,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Home extends AppCompatActivity {
     private ServicioWeb servicio;
     private Button nationalStatisticsBtn;
+    private Button regionalStatisticsBtn;
     private Spinner listaRegiones;
     private List<String> nombreRegiones = new ArrayList<>();
     private int regionID;
@@ -34,6 +38,15 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        /**Se infla el botón que llevará a las estadísticas de todas las regiones.*/
+        regionalStatisticsBtn = findViewById(R.id.estadisticas_regionales);
+        regionalStatisticsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initEstadisticasAllRegions();
+            }
+        });
 
         /**Se infla el botón que llevará a las estadísticas nacionales*/
         nationalStatisticsBtn = findViewById(R.id.estadisticas_nacionales);
@@ -85,10 +98,15 @@ public class Home extends AppCompatActivity {
 
     /**Método para ir a la actividad que mostrará las estadísticas de la región que sea seleccionada en el spinner.*/
     private void initEstadisticasDeUnaRegion() {
-        Log.d("retrofit", "LA ID DE REGIÓN A PASAR ES: " + regionID);
-
         Intent init = new Intent(this, ReporteDeUnaRegion.class);
         init.putExtra("id", regionID);
+        startActivity(init);
+        finish();
+    }
+
+    /**Método para ir a la actividad que mostrará las estadísticas comparativas de todas las regiones del país.*/
+    private void initEstadisticasAllRegions() {
+        Intent init = new Intent(this, CasosAcumulados.class);
         startActivity(init);
         finish();
     }
@@ -141,7 +159,28 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    public int getRegionID() {
-        return regionID;
+    /**Al presionar el botón para ir atrás, confirma si realmente desea salir de la aplicación.*/
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder msg = new AlertDialog.Builder(this);
+        msg.setTitle("Salir de la aplicación");
+        msg.setMessage("¿Está seguro de querer salir de la aplicación?");
+
+        msg.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        msg.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog showMsg = msg.create();
+        showMsg.show();
     }
 }
