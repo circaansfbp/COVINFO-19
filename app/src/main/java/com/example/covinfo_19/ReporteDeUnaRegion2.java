@@ -1,10 +1,8 @@
 package com.example.covinfo_19;
 
 import androidx.annotation.NonNull;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,16 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.example.covinfo_19.comparativa_regiones.CasosAcumulados;
-import com.example.covinfo_19.servicios_web.ServicioWeb;
-import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.covinfo_19.servicios_web.ServicioWeb;
+import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,10 +26,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Home extends AppCompatActivity {
+public class ReporteDeUnaRegion2 extends AppCompatActivity {
+
     private ServicioWeb servicio;
-    private Button nationalStatisticsBtn;
-    private Button regionalStatisticsBtn;
     private Spinner listaRegiones;
     private List<String> nombreRegiones = new ArrayList<>();
     private int regionID;
@@ -42,25 +36,8 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_reporte_de_una_region2);
 
-        /**Se infla el botón que llevará a las estadísticas de todas las regiones.*/
-        regionalStatisticsBtn = findViewById(R.id.estadisticas_regionales);
-        regionalStatisticsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initEstadisticasAllRegions();
-            }
-        });
-
-        /**Se infla el botón que llevará a las estadísticas nacionales*/
-        nationalStatisticsBtn = findViewById(R.id.estadisticas_nacionales);
-        nationalStatisticsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initEstadisticasNacionales();
-            }
-        });
 
         /**Se llama a la librería para que se creen los objetos al hacer la llamada al servicio web.*/
         Retrofit retrofit = new Retrofit.Builder().baseUrl(" http://covid.unnamed-chile.com/api/")
@@ -103,15 +80,10 @@ public class Home extends AppCompatActivity {
 
     /**Método para ir a la actividad que mostrará las estadísticas de la región que sea seleccionada en el spinner.*/
     private void initEstadisticasDeUnaRegion() {
+        Log.d("retrofit", "LA ID DE REGIÓN A PASAR ES: " + regionID);
+
         Intent init = new Intent(this, ReporteDeUnaRegion.class);
         init.putExtra("id", regionID);
-        startActivity(init);
-        finish();
-    }
-
-    /**Método para ir a la actividad que mostrará las estadísticas comparativas de todas las regiones del país.*/
-    private void initEstadisticasAllRegions() {
-        Intent init = new Intent(this, CasosAcumulados.class);
         startActivity(init);
         finish();
     }
@@ -164,29 +136,8 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    /**Al presionar el botón para ir atrás, confirma si realmente desea salir de la aplicación.*/
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder msg = new AlertDialog.Builder(this);
-        msg.setTitle("Salir de la aplicación");
-        msg.setMessage("¿Está seguro de querer salir de la aplicación?");
-
-        msg.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-
-        msg.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        AlertDialog showMsg = msg.create();
-        showMsg.show();
+    public int getRegionID() {
+        return regionID;
     }
 
     /**creacion e inflacion del menu*/
@@ -195,6 +146,7 @@ public class Home extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+        //return super.onCreateOptionsMenu(menu);
     }
 
     /**casos de seleccion del menu*/
@@ -202,19 +154,19 @@ public class Home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.activity1:
-                Intent intent = new Intent(Home.this, Home.class);
+                Intent intent = new Intent(ReporteDeUnaRegion2.this, Home.class);
                 startActivity(intent);
                 return false;
             case R.id.activity2:
-                Intent intent2 = new Intent(Home.this, ReporteDiario.class);
+                Intent intent2 = new Intent(ReporteDeUnaRegion2.this, ReporteDiario.class);
                 startActivity(intent2);
                 return false;
             case R.id.activity3:
-                Intent intent3 = new Intent(Home.this, ReporteDeUnaRegion2.class);
+                Intent intent3 = new Intent(ReporteDeUnaRegion2.this, ReporteDeUnaRegion2.class);
                 startActivity(intent3);
                 return false;
             case R.id.activity4:
-                Intent intent4 = new Intent(Home.this, ReporteDeUnaRegion.class);
+                Intent intent4 = new Intent(ReporteDeUnaRegion2.this, ReporteDeUnaRegion2.class);
                 /**cambiar por clase reporte de todas las regiones*/
                 startActivity(intent4);
                 return false;
