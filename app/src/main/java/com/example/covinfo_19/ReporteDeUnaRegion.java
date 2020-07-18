@@ -1,8 +1,10 @@
 package com.example.covinfo_19;
 
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -117,7 +119,7 @@ public class ReporteDeUnaRegion extends AppCompatActivity {
         chartData.add(new ValueDataEntry("Casos nuevos sin notificar", datos.getReporte().getCasos_nuevos_snotificar()));
 
         pie.data(chartData);
-        pie.title("Distribución de casos nuevos en la región");
+        pie.title("Distribución de casos nuevos en la región (%)");
         pie.labels().position("outside");
 
         pie.legend().title().enabled(true);
@@ -164,6 +166,7 @@ public class ReporteDeUnaRegion extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
 
 }

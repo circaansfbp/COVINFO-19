@@ -106,7 +106,7 @@ public class ReporteDiario extends AppCompatActivity {
         chartData.add(new ValueDataEntry("Casos nuevos sin notificar", datos.getReporte().getCasos_nuevos_snotificar()));
 
         pie.data(chartData);
-        pie.title("Distribución de casos nuevos a la fecha");
+        pie.title("Distribución de casos nuevos a la fecha (%)");
         pie.labels().position("outside");
 
         pie.legend().title().enabled(true);
@@ -121,7 +121,7 @@ public class ReporteDiario extends AppCompatActivity {
 
         anyChartView.setChart(pie);
     }
-
+  
     /**creacion e inflacion del menu*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -155,5 +155,6 @@ public class ReporteDiario extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
 }

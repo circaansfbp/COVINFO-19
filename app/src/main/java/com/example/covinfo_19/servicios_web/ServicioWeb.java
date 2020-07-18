@@ -1,5 +1,6 @@
 package com.example.covinfo_19.servicios_web;
 
+import com.example.covinfo_19.servicios_web.respuestas.AllRegionRWS;
 import com.example.covinfo_19.servicios_web.respuestas.RespuestaWS;
 import com.example.covinfo_19.servicios_web.respuestas.RegionesRWS;
 
@@ -17,4 +18,7 @@ public interface ServicioWeb {
 
     @POST("data/{idregion}")
     Call<RespuestaWS> getDataForSpecifiedRegion(@Path("idregion") int idRegion);
+
+    @POST("data/all")
+    Call<AllRegionRWS> getAllDataPerRegion();
 }
