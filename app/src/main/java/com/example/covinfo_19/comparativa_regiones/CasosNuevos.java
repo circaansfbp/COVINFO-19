@@ -1,5 +1,6 @@
 package com.example.covinfo_19.comparativa_regiones;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,7 +23,9 @@ import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
 import com.anychart.enums.Align;
 import com.anychart.enums.LegendLayout;
+import com.example.covinfo_19.Home;
 import com.example.covinfo_19.R;
+import com.example.covinfo_19.ReporteDiario;
 import com.example.covinfo_19.servicios_web.Region;
 import com.example.covinfo_19.servicios_web.ServicioWeb;
 import com.example.covinfo_19.servicios_web.respuestas.AllRegionRWS;
@@ -190,5 +196,35 @@ public class CasosNuevos extends AppCompatActivity {
 
         AlertDialog showMsg = msg.create();
         showMsg.show();
+    }
+
+    /**se infla el menu*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    /**casos de seleccion del menu*/
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.activity1:
+                Intent intent = new Intent(CasosNuevos.this, Home.class);
+                startActivity(intent);
+                return false;
+            case R.id.activity2:
+                Intent intent2 = new Intent(CasosNuevos.this, ReporteDiario.class);
+                startActivity(intent2);
+                return false;
+            case R.id.activity3:
+                Intent intent3 = new Intent(CasosNuevos.this, CasosAcumulados.class);
+                startActivity(intent3);
+                return false;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }

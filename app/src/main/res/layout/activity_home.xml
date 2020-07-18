@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="@color/design_default_color_secondary"
+                app:cardBackgroundColor="#46B0F0"
                 app:cardElevation="10dp">
 
                 <LinearLayout
@@ -85,7 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alef_bold"
-                        android:text="Datos Por Región"
+                        android:text="Datos por Región"
                         android:textAlignment="textStart"
                         android:textAppearance="?attr/textAppearanceHeadline3"
                         android:textColor="@color/colorPrimary"></TextView>
@@ -126,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardBackgroundColor="#115AB1"
                 app:cardElevation="10dp">
 
                 <LinearLayout
