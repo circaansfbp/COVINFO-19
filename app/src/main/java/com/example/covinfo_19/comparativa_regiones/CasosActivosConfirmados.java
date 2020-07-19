@@ -45,6 +45,16 @@ public class CasosActivosConfirmados extends AppCompatActivity {
     private Button volverCasosNuevos;
     private Button irFallecidos;
 
+    private TextView nombreCuartoLugar; private TextView cantidadCuartoLugar; private TextView nombreQuintoLugar;
+    private TextView cantidadQuintoLugar; private TextView nombreSextoLugar; private TextView cantidadSextoLugar;
+    private TextView nombreSeptimoLugar; private TextView cantidadSeptimoLugar; private TextView nombreOctavoLugar;
+    private TextView cantidadOctavoLugar; private TextView nombreNovenoLugar; private TextView cantidadNovenoLugar;
+    private TextView nombreDecimoLugar; private TextView cantidadDecimoLugar; private TextView nombreOnceavoLugar;
+    private TextView cantidadOnceavoLugar; private TextView nombreDoceavoLugar; private TextView cantidadDoceavoLugar;
+    private TextView nombreTreceavoLugar; private TextView cantidadTreceavoLugar; private TextView nombreCatorceavoLugar;
+    private TextView cantidadCatorceavoLugar; private TextView nombreQuinceavoLugar; private TextView cantidadQuinceavoLugar;
+    private TextView nombreDieciseisavoLugar; private TextView cantidadDieciseisavoLugar;
+
     private AnyChartView activosAnyChartView;
     private Pie pie;
 
@@ -56,6 +66,33 @@ public class CasosActivosConfirmados extends AppCompatActivity {
         setContentView(R.layout.activity_casos_activos_confirmados);
 
         fechaCasosActivos = findViewById(R.id.fecha_casos_activos);
+
+        nombreCuartoLugar = findViewById(R.id.nombre_cuarto_lugar_activos_confirmados);
+        cantidadCuartoLugar = findViewById(R.id.cantidad_cuarto_lugar_activos_confirmados);
+        nombreQuintoLugar = findViewById(R.id.nombre_quinto_lugar_activos_confirmados);
+        cantidadQuintoLugar = findViewById(R.id.cantidad_quinto_lugar_activos_confirmados);
+        nombreSextoLugar = findViewById(R.id.nombre_sexto_lugar_activos_confirmados);
+        cantidadSextoLugar = findViewById(R.id.cantidad_sexto_lugar_activos_confirmados);
+        nombreSeptimoLugar = findViewById(R.id.nombre_septimo_lugar_activos_confirmados);
+        cantidadSeptimoLugar = findViewById(R.id.cantidad_septimo_lugar_activos_confirmados);
+        nombreOctavoLugar = findViewById(R.id.nombre_octavo_lugar_activos_confirmados);
+        cantidadOctavoLugar = findViewById(R.id.cantidad_octavo_lugar_activos_confirmados);
+        nombreNovenoLugar = findViewById(R.id.nombre_noveno_lugar_activos_confirmados);
+        cantidadNovenoLugar = findViewById(R.id.cantidad_noveno_lugar_activos_confirmados);
+        nombreDecimoLugar = findViewById(R.id.nombre_decimo_lugar_activos_confirmados);
+        cantidadDecimoLugar = findViewById(R.id.cantidad_decimo_lugar_activos_confirmados);
+        nombreOnceavoLugar = findViewById(R.id.nombre_onceavo_lugar_activos_confirmados);
+        cantidadOnceavoLugar = findViewById(R.id.cantidad_onceavo_lugar_activos_confirmados);
+        nombreDoceavoLugar = findViewById(R.id.nombre_doceavo_lugar_activos_confirmados);
+        cantidadDoceavoLugar = findViewById(R.id.cantidad_doceavo_lugar_activos_confirmados);
+        nombreTreceavoLugar = findViewById(R.id.nombre_treceavo_lugar_activos_confirmados);
+        cantidadTreceavoLugar = findViewById(R.id.cantidad_treceavo_lugar_activos_confirmados);
+        nombreCatorceavoLugar = findViewById(R.id.nombre_catorceavo_lugar_activos_confirmados);
+        cantidadCatorceavoLugar = findViewById(R.id.cantidad_catorceavo_lugar_activos_confirmados);
+        nombreQuinceavoLugar = findViewById(R.id.nombre_quinceavo_lugar_activos_confirmados);
+        cantidadQuinceavoLugar = findViewById(R.id.cantidad_quinceavo_lugar_activos_confirmados);
+        nombreDieciseisavoLugar = findViewById(R.id.nombre_dieciseisavo_lugar_activos_confirmados);
+        cantidadDieciseisavoLugar = findViewById(R.id.cantidad_dieciseisavo_lugar_activos_confirmados);
 
         volverCasosNuevos = findViewById(R.id.volver_casos_nuevos);
         volverCasosNuevos.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +144,7 @@ public class CasosActivosConfirmados extends AppCompatActivity {
                     AllRegionRWS datos = response.body();
 
                     /**Se setea la fecha del día.*/
-                    fechaCasosActivos.setText(datos.getFecha());
+                    fechaCasosActivos.setText(datos.getFecha() + "*");
 
                     /**Se obtienen los nombres y los casos activos confirmados de la respuesta del servicio web, se crean nuevos objetos de tipo Region,
                      * y estos son agregados a un nuevo Array que posteriormente será ordenado.*/
@@ -142,6 +179,33 @@ public class CasosActivosConfirmados extends AppCompatActivity {
                             .align(Align.CENTER);
 
                     activosAnyChartView.setChart(pie);
+
+                    nombreCuartoLugar.setText("4. " + casosActivosArray.get(3).getNombre() + ":");
+                    cantidadCuartoLugar.setText(String.valueOf(casosActivosArray.get(3).getId()) + " casos");
+                    nombreQuintoLugar.setText("5. " + casosActivosArray.get(4).getNombre() + ":");
+                    cantidadQuintoLugar.setText(String.valueOf(casosActivosArray.get(4).getId()) + " casos");
+                    nombreSextoLugar.setText("6. " + casosActivosArray.get(5).getNombre() + ":");
+                    cantidadSextoLugar.setText(String.valueOf(casosActivosArray.get(5).getId()) + " casos");
+                    nombreSeptimoLugar.setText("7. " + casosActivosArray.get(6).getNombre() + ":");
+                    cantidadSeptimoLugar.setText(String.valueOf(casosActivosArray.get(6).getId()) + " casos");
+                    nombreOctavoLugar.setText("8. " + casosActivosArray.get(7).getNombre() + ":");
+                    cantidadOctavoLugar.setText(String.valueOf(casosActivosArray.get(7).getId()) + " casos");
+                    nombreNovenoLugar.setText("9. " + casosActivosArray.get(8).getNombre() + ":");
+                    cantidadNovenoLugar.setText(String.valueOf(casosActivosArray.get(8).getId()) + " casos");
+                    nombreDecimoLugar.setText("10. " + casosActivosArray.get(9).getNombre() + ":");
+                    cantidadDecimoLugar.setText(String.valueOf(casosActivosArray.get(9).getId()) + " casos");
+                    nombreOnceavoLugar.setText("11. " + casosActivosArray.get(10).getNombre() + ":");
+                    cantidadOnceavoLugar.setText(String.valueOf(casosActivosArray.get(10).getId()) + " casos");
+                    nombreDoceavoLugar.setText("12. " + casosActivosArray.get(11).getNombre() + ":");
+                    cantidadDoceavoLugar.setText(String.valueOf(casosActivosArray.get(11).getId()) + " casos");
+                    nombreTreceavoLugar.setText("13. " + casosActivosArray.get(12).getNombre() + ":");
+                    cantidadTreceavoLugar.setText(String.valueOf(casosActivosArray.get(12).getId()) + " casos");
+                    nombreCatorceavoLugar.setText("14. " + casosActivosArray.get(13).getNombre() + ":");
+                    cantidadCatorceavoLugar.setText(String.valueOf(casosActivosArray.get(13).getId()) + " casos");
+                    nombreQuinceavoLugar.setText("15. " + casosActivosArray.get(14).getNombre() + ":");
+                    cantidadQuinceavoLugar.setText(String.valueOf(casosActivosArray.get(14).getId()) + " casos");
+                    nombreDieciseisavoLugar.setText("16. " + casosActivosArray.get(15).getNombre() + ":");
+                    cantidadDieciseisavoLugar.setText(String.valueOf(casosActivosArray.get(15).getId()) + " casos");
                 }
             }
 
@@ -210,14 +274,17 @@ public class CasosActivosConfirmados extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(CasosActivosConfirmados.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(CasosActivosConfirmados.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(CasosActivosConfirmados.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);

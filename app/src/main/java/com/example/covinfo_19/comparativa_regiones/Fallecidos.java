@@ -44,6 +44,16 @@ public class Fallecidos extends AppCompatActivity {
     private TextView fechaFallecidos;
     private Button volverCasosActivos;
 
+    private TextView nombreCuartoLugar; private TextView cantidadCuartoLugar; private TextView nombreQuintoLugar;
+    private TextView cantidadQuintoLugar; private TextView nombreSextoLugar; private TextView cantidadSextoLugar;
+    private TextView nombreSeptimoLugar; private TextView cantidadSeptimoLugar; private TextView nombreOctavoLugar;
+    private TextView cantidadOctavoLugar; private TextView nombreNovenoLugar; private TextView cantidadNovenoLugar;
+    private TextView nombreDecimoLugar; private TextView cantidadDecimoLugar; private TextView nombreOnceavoLugar;
+    private TextView cantidadOnceavoLugar; private TextView nombreDoceavoLugar; private TextView cantidadDoceavoLugar;
+    private TextView nombreTreceavoLugar; private TextView cantidadTreceavoLugar; private TextView nombreCatorceavoLugar;
+    private TextView cantidadCatorceavoLugar; private TextView nombreQuinceavoLugar; private TextView cantidadQuinceavoLugar;
+    private TextView nombreDieciseisavoLugar; private TextView cantidadDieciseisavoLugar;
+
     private AnyChartView fallecidosAnyChartView;
     private Pie pie;
 
@@ -55,6 +65,33 @@ public class Fallecidos extends AppCompatActivity {
         setContentView(R.layout.activity_fallecidos);
 
         fechaFallecidos = findViewById(R.id.fecha_fallecidos);
+
+        nombreCuartoLugar = findViewById(R.id.nombre_cuarto_lugar_fallecidos);
+        cantidadCuartoLugar = findViewById(R.id.cantidad_cuarto_lugar_fallecidos);
+        nombreQuintoLugar = findViewById(R.id.nombre_quinto_lugar_fallecidos);
+        cantidadQuintoLugar = findViewById(R.id.cantidad_quinto_lugar_fallecidos);
+        nombreSextoLugar = findViewById(R.id.nombre_sexto_lugar_fallecidos);
+        cantidadSextoLugar = findViewById(R.id.cantidad_sexto_lugar_fallecidos);
+        nombreSeptimoLugar = findViewById(R.id.nombre_septimo_lugar_fallecidos);
+        cantidadSeptimoLugar = findViewById(R.id.cantidad_septimo_lugar_fallecidos);
+        nombreOctavoLugar = findViewById(R.id.nombre_octavo_lugar_fallecidos);
+        cantidadOctavoLugar = findViewById(R.id.cantidad_octavo_lugar_fallecidos);
+        nombreNovenoLugar = findViewById(R.id.nombre_noveno_lugar_fallecidos);
+        cantidadNovenoLugar = findViewById(R.id.cantidad_noveno_lugar_fallecidos);
+        nombreDecimoLugar = findViewById(R.id.nombre_decimo_lugar_fallecidos);
+        cantidadDecimoLugar = findViewById(R.id.cantidad_decimo_lugar_fallecidos);
+        nombreOnceavoLugar = findViewById(R.id.nombre_onceavo_lugar_fallecidos);
+        cantidadOnceavoLugar = findViewById(R.id.cantidad_onceavo_lugar_fallecidos);
+        nombreDoceavoLugar = findViewById(R.id.nombre_doceavo_lugar_fallecidos);
+        cantidadDoceavoLugar = findViewById(R.id.cantidad_doceavo_lugar_fallecidos);
+        nombreTreceavoLugar = findViewById(R.id.nombre_treceavo_lugar_fallecidos);
+        cantidadTreceavoLugar = findViewById(R.id.cantidad_treceavo_lugar_fallecidos);
+        nombreCatorceavoLugar = findViewById(R.id.nombre_catorceavo_lugar_fallecidos);
+        cantidadCatorceavoLugar = findViewById(R.id.cantidad_catorceavo_lugar_fallecidos);
+        nombreQuinceavoLugar = findViewById(R.id.nombre_quinceavo_lugar_fallecidos);
+        cantidadQuinceavoLugar = findViewById(R.id.cantidad_quinceavo_lugar_fallecidos);
+        nombreDieciseisavoLugar = findViewById(R.id.nombre_dieciseisavo_lugar_fallecidos);
+        cantidadDieciseisavoLugar = findViewById(R.id.cantidad_dieciseisavo_lugar_fallecidos);
 
         volverCasosActivos = findViewById(R.id.volver_casos_activos);
         volverCasosActivos.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +128,7 @@ public class Fallecidos extends AppCompatActivity {
                     AllRegionRWS datos = response.body();
 
                     /**Se setea la fecha del día.*/
-                    fechaFallecidos.setText(datos.getFecha());
+                    fechaFallecidos.setText(datos.getFecha() + "*");
 
                     /**Se obtienen los nombres y los casos activos confirmados de la respuesta del servicio web, se crean nuevos objetos de tipo Region,
                      * y estos son agregados a un nuevo Array que posteriormente será ordenado.*/
@@ -125,6 +162,33 @@ public class Fallecidos extends AppCompatActivity {
                             .itemsLayout(LegendLayout.HORIZONTAL)
                             .align(Align.CENTER);
                     fallecidosAnyChartView.setChart(pie);
+
+                    nombreCuartoLugar.setText("4. " + fallecidosArray.get(3).getNombre() + ":");
+                    cantidadCuartoLugar.setText(String.valueOf(fallecidosArray.get(3).getId()) + " fallecidos");
+                    nombreQuintoLugar.setText("5. " + fallecidosArray.get(4).getNombre() + ":");
+                    cantidadQuintoLugar.setText(String.valueOf(fallecidosArray.get(4).getId()) + " fallecidos");
+                    nombreSextoLugar.setText("6. " + fallecidosArray.get(5).getNombre() + ":");
+                    cantidadSextoLugar.setText(String.valueOf(fallecidosArray.get(5).getId()) + " fallecidos");
+                    nombreSeptimoLugar.setText("7. " + fallecidosArray.get(6).getNombre() + ":");
+                    cantidadSeptimoLugar.setText(String.valueOf(fallecidosArray.get(6).getId()) + " fallecidos");
+                    nombreOctavoLugar.setText("8. " + fallecidosArray.get(7).getNombre() + ":");
+                    cantidadOctavoLugar.setText(String.valueOf(fallecidosArray.get(7).getId()) + " fallecidos");
+                    nombreNovenoLugar.setText("9. " + fallecidosArray.get(8).getNombre() + ":");
+                    cantidadNovenoLugar.setText(String.valueOf(fallecidosArray.get(8).getId()) + " fallecidos");
+                    nombreDecimoLugar.setText("10. " + fallecidosArray.get(9).getNombre() + ":");
+                    cantidadDecimoLugar.setText(String.valueOf(fallecidosArray.get(9).getId()) + " fallecidos");
+                    nombreOnceavoLugar.setText("11. " + fallecidosArray.get(10).getNombre() + ":");
+                    cantidadOnceavoLugar.setText(String.valueOf(fallecidosArray.get(10).getId()) + " fallecidos");
+                    nombreDoceavoLugar.setText("12. " + fallecidosArray.get(11).getNombre() + ":");
+                    cantidadDoceavoLugar.setText(String.valueOf(fallecidosArray.get(11).getId()) + " fallecidos");
+                    nombreTreceavoLugar.setText("13. " + fallecidosArray.get(12).getNombre() + ":");
+                    cantidadTreceavoLugar.setText(String.valueOf(fallecidosArray.get(12).getId()) + " fallecidos");
+                    nombreCatorceavoLugar.setText("14. " + fallecidosArray.get(13).getNombre() + ":");
+                    cantidadCatorceavoLugar.setText(String.valueOf(fallecidosArray.get(13).getId()) + " fallecidos");
+                    nombreQuinceavoLugar.setText("15. " + fallecidosArray.get(14).getNombre() + ":");
+                    cantidadQuinceavoLugar.setText(String.valueOf(fallecidosArray.get(14).getId()) + " fallecidos");
+                    nombreDieciseisavoLugar.setText("16. " + fallecidosArray.get(15).getNombre() + ":");
+                    cantidadDieciseisavoLugar.setText(String.valueOf(fallecidosArray.get(15).getId()) + " fallecidos");
                 }
             }
 
@@ -194,14 +258,17 @@ public class Fallecidos extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(Fallecidos.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(Fallecidos.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(Fallecidos.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);

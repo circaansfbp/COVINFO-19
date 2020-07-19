@@ -91,7 +91,7 @@ public class ReporteDeUnaRegion extends AppCompatActivity {
                         nombreRegion = nombreRegion.replace("Región: ", "");
                         nombreRegionSeleccionada.setText(nombreRegion);
 
-                        fechaReporteRegion.setText(datos.getFecha());
+                        fechaReporteRegion.setText(datos.getFecha() + "*");
                         totalCasosRegion.setText(String.valueOf(datos.getReporte().getAcumulado_total()));
                         totalCasosNuevos.setText(String.valueOf(datos.getReporte().getCasos_nuevos_total()));
                         fallecidosRegion.setText(String.valueOf(datos.getReporte().getFallecidos()));
@@ -176,14 +176,17 @@ public class ReporteDeUnaRegion extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(ReporteDeUnaRegion.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(ReporteDeUnaRegion.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(ReporteDeUnaRegion.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);

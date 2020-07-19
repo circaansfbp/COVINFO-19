@@ -15,14 +15,14 @@
     <item
         android:id="@+id/activity2"
         android:orderInCategory="100"
-        android:title="Reporte Nacional"
+        android:title="Reporte Diario Nacional"
         app:showAsAction="never" />
 
 
     <item
         android:id="@+id/activity3"
         android:orderInCategory="100"
-        android:title="Reporte por Regiones"
+        android:title="Estadísticas Comparativas"
         app:showAsAction="never" />
 
 </menu>

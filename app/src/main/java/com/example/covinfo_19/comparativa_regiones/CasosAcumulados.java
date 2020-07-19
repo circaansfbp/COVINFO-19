@@ -30,6 +30,8 @@ import com.example.covinfo_19.servicios_web.Region;
 import com.example.covinfo_19.servicios_web.ServicioWeb;
 import com.example.covinfo_19.servicios_web.respuestas.AllRegionRWS;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CasosAcumulados extends AppCompatActivity {
     private ServicioWeb servicio;
     private TextView fechaEstadisticasComparativas;
+
+    private TextView nombreCuartoLugar; private TextView cantidadCuartoLugar; private TextView nombreQuintoLugar;
+    private TextView cantidadQuintoLugar; private TextView nombreSextoLugar; private TextView cantidadSextoLugar;
+    private TextView nombreSeptimoLugar; private TextView cantidadSeptimoLugar; private TextView nombreOctavoLugar;
+    private TextView cantidadOctavoLugar; private TextView nombreNovenoLugar; private TextView cantidadNovenoLugar;
+    private TextView nombreDecimoLugar; private TextView cantidadDecimoLugar; private TextView nombreOnceavoLugar;
+    private TextView cantidadOnceavoLugar; private TextView nombreDoceavoLugar; private TextView cantidadDoceavoLugar;
+    private TextView nombreTreceavoLugar; private TextView cantidadTreceavoLugar; private TextView nombreCatorceavoLugar;
+    private TextView cantidadCatorceavoLugar; private TextView nombreQuinceavoLugar; private TextView cantidadQuinceavoLugar;
+    private TextView nombreDieciseisavoLugar; private TextView cantidadDieciseisavoLugar;
+
     private Button irCasosNuevosBtn;
 
     private AnyChartView casosAcumuladosAnyChartView;
@@ -55,6 +68,33 @@ public class CasosAcumulados extends AppCompatActivity {
         setContentView(R.layout.activity_casos_acumulados);
 
         /**Se inflan los objetos.*/
+        nombreCuartoLugar = findViewById(R.id.nombre_cuarto_lugar_acumulados);
+        cantidadCuartoLugar = findViewById(R.id.cantidad_cuarto_lugar_acumulados);
+        nombreQuintoLugar = findViewById(R.id.nombre_quinto_lugar_acumulados);
+        cantidadQuintoLugar = findViewById(R.id.cantidad_quinto_lugar_acumulados);
+        nombreSextoLugar = findViewById(R.id.nombre_sexto_lugar_acumulados);
+        cantidadSextoLugar = findViewById(R.id.cantidad_sexto_lugar_acumulados);
+        nombreSeptimoLugar = findViewById(R.id.nombre_septimo_lugar_acumulados);
+        cantidadSeptimoLugar = findViewById(R.id.cantidad_septimo_lugar_acumulados);
+        nombreOctavoLugar = findViewById(R.id.nombre_octavo_lugar_acumulados);
+        cantidadOctavoLugar = findViewById(R.id.cantidad_octavo_lugar_acumulados);
+        nombreNovenoLugar = findViewById(R.id.nombre_noveno_lugar_acumulados);
+        cantidadNovenoLugar = findViewById(R.id.cantidad_noveno_lugar_acumulados);
+        nombreDecimoLugar = findViewById(R.id.nombre_decimo_lugar_acumulados);
+        cantidadDecimoLugar = findViewById(R.id.cantidad_decimo_lugar_acumulados);
+        nombreOnceavoLugar = findViewById(R.id.nombre_onceavo_lugar_acumulados);
+        cantidadOnceavoLugar = findViewById(R.id.cantidad_onceavo_lugar_acumulados);
+        nombreDoceavoLugar = findViewById(R.id.nombre_doceavo_lugar_acumulados);
+        cantidadDoceavoLugar = findViewById(R.id.cantidad_doceavo_lugar_acumulados);
+        nombreTreceavoLugar = findViewById(R.id.nombre_treceavo_lugar_acumulados);
+        cantidadTreceavoLugar = findViewById(R.id.cantidad_treceavo_lugar_acumulados);
+        nombreCatorceavoLugar = findViewById(R.id.nombre_catorceavo_lugar_acumulados);
+        cantidadCatorceavoLugar = findViewById(R.id.cantidad_catorceavo_lugar_acumulados);
+        nombreQuinceavoLugar = findViewById(R.id.nombre_quinceavo_lugar_acumulados);
+        cantidadQuinceavoLugar = findViewById(R.id.cantidad_quinceavo_lugar_acumulados);
+        nombreDieciseisavoLugar = findViewById(R.id.nombre_dieciseisavo_lugar_acumulados);
+        cantidadDieciseisavoLugar = findViewById(R.id.cantidad_dieciseisavo_lugar_acumulados);
+
         fechaEstadisticasComparativas = findViewById(R.id.fecha_estadisticas_comparativas);
         irCasosNuevosBtn = findViewById(R.id.top_casos_nuevos);
         irCasosNuevosBtn.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +131,7 @@ public class CasosAcumulados extends AppCompatActivity {
                     AllRegionRWS datos = response.body();
 
                     /**Se setea la fecha del día al que corresponden los datos.*/
-                    fechaEstadisticasComparativas.setText(datos.getFecha());
+                    fechaEstadisticasComparativas.setText(datos.getFecha() + "*");
 
                     /**Se obtienen los nombres y los casos acumulados de la respuesta del servicio web, se crean nuevos objetos de tipo Region,
                      * y estos son agregados a un nuevo Array que posteriormente será ordenado*/
@@ -126,6 +166,33 @@ public class CasosAcumulados extends AppCompatActivity {
                             .align(Align.CENTER);
 
                     casosAcumuladosAnyChartView.setChart(pie);
+
+                    nombreCuartoLugar.setText("4. " + casosAcumuladosSortingArray.get(3).getNombre() + ":");
+                    cantidadCuartoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(3).getId()) + " casos");
+                    nombreQuintoLugar.setText("5. " + casosAcumuladosSortingArray.get(4).getNombre() + ":");
+                    cantidadQuintoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(4).getId()) + " casos");
+                    nombreSextoLugar.setText("6. " + casosAcumuladosSortingArray.get(5).getNombre() + ":");
+                    cantidadSextoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(5).getId()) + " casos");
+                    nombreSeptimoLugar.setText("7. " + casosAcumuladosSortingArray.get(6).getNombre() + ":");
+                    cantidadSeptimoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(6).getId()) + " casos");
+                    nombreOctavoLugar.setText("8. " + casosAcumuladosSortingArray.get(7).getNombre() + ":");
+                    cantidadOctavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(7).getId()) + " casos");
+                    nombreNovenoLugar.setText("9. " + casosAcumuladosSortingArray.get(8).getNombre() + ":");
+                    cantidadNovenoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(8).getId()) + " casos");
+                    nombreDecimoLugar.setText("10. " + casosAcumuladosSortingArray.get(9).getNombre() + ":");
+                    cantidadDecimoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(9).getId()) + " casos");
+                    nombreOnceavoLugar.setText("11. " + casosAcumuladosSortingArray.get(10).getNombre() + ":");
+                    cantidadOnceavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(10).getId()) + " casos");
+                    nombreDoceavoLugar.setText("12. " + casosAcumuladosSortingArray.get(11).getNombre() + ":");
+                    cantidadDoceavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(11).getId()) + " casos");
+                    nombreTreceavoLugar.setText("13. " + casosAcumuladosSortingArray.get(12).getNombre() + ":");
+                    cantidadTreceavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(12).getId()) + " casos");
+                    nombreCatorceavoLugar.setText("14. " + casosAcumuladosSortingArray.get(13).getNombre() + ":");
+                    cantidadCatorceavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(13).getId()) + " casos");
+                    nombreQuinceavoLugar.setText("15. " + casosAcumuladosSortingArray.get(14).getNombre() + ":");
+                    cantidadQuinceavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(14).getId()) + " casos");
+                    nombreDieciseisavoLugar.setText("16. " + casosAcumuladosSortingArray.get(15).getNombre() + ":");
+                    cantidadDieciseisavoLugar.setText(String.valueOf(casosAcumuladosSortingArray.get(15).getId()) + " casos");
 
                 }
             }
@@ -196,14 +263,17 @@ public class CasosAcumulados extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(CasosAcumulados.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(CasosAcumulados.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(CasosAcumulados.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);

@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardBackgroundColor="#115AB1"
                 app:cardElevation="10dp">
 
                 <LinearLayout
@@ -79,13 +79,393 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_resto_de_datos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#115AB1"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alef_bold"
+                    android:text="Le siguen"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="5dp"></TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:layout_marginTop="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_cuarto_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_cuarto_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_quinto_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_quinto_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_sexto_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_sexto_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_septimo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_septimo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_octavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_octavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_noveno_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_noveno_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_decimo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_decimo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_onceavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_onceavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_doceavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_doceavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_treceavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_treceavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_catorceavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_catorceavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_quinceavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_quinceavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre_dieciseisavo_lugar_fallecidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorAccent"></TextView>
+
+                        <TextView
+                            android:id="@+id/cantidad_dieciseisavo_lugar_fallecidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alef_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorPrimary"></TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_volver_casos_activos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardBackgroundColor="#115AB1"
                 app:cardElevation="10dp">
 
                 <LinearLayout
@@ -103,6 +483,35 @@
                         android:fontFamily="@font/alef_bold"
                         android:text="Volver a los casos activos confirmados"
                         android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_especificaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#115AB1"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="*Hasta las 12:00 hrs. del día, la información válida corresponde a la del día de ayer. Luego de esta hora se actualizan los datos, de acuerdo a lo entregado por el Ministerio de Salud."
+                        android:textAlignment="center"
+                        android:textSize="14dp"
+                        android:textColor="@color/colorAccent"></TextView>
 
                 </LinearLayout>
 

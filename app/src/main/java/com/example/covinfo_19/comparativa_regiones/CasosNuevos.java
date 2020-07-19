@@ -46,6 +46,16 @@ public class CasosNuevos extends AppCompatActivity {
     private Button irCasosActivos;
     private TextView fechaCasosNuevos;
 
+    private TextView nombreCuartoLugar; private TextView cantidadCuartoLugar; private TextView nombreQuintoLugar;
+    private TextView cantidadQuintoLugar; private TextView nombreSextoLugar; private TextView cantidadSextoLugar;
+    private TextView nombreSeptimoLugar; private TextView cantidadSeptimoLugar; private TextView nombreOctavoLugar;
+    private TextView cantidadOctavoLugar; private TextView nombreNovenoLugar; private TextView cantidadNovenoLugar;
+    private TextView nombreDecimoLugar; private TextView cantidadDecimoLugar; private TextView nombreOnceavoLugar;
+    private TextView cantidadOnceavoLugar; private TextView nombreDoceavoLugar; private TextView cantidadDoceavoLugar;
+    private TextView nombreTreceavoLugar; private TextView cantidadTreceavoLugar; private TextView nombreCatorceavoLugar;
+    private TextView cantidadCatorceavoLugar; private TextView nombreQuinceavoLugar; private TextView cantidadQuinceavoLugar;
+    private TextView nombreDieciseisavoLugar; private TextView cantidadDieciseisavoLugar;
+
     private AnyChartView nuevosAnyChartView;
     private Pie pie;
 
@@ -55,6 +65,33 @@ public class CasosNuevos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_casos_nuevos);
+
+        nombreCuartoLugar = findViewById(R.id.nombre_cuarto_lugar_nuevos);
+        cantidadCuartoLugar = findViewById(R.id.cantidad_cuarto_lugar_nuevos);
+        nombreQuintoLugar = findViewById(R.id.nombre_quinto_lugar_nuevos);
+        cantidadQuintoLugar = findViewById(R.id.cantidad_quinto_lugar_nuevos);
+        nombreSextoLugar = findViewById(R.id.nombre_sexto_lugar_nuevos);
+        cantidadSextoLugar = findViewById(R.id.cantidad_sexto_lugar_nuevos);
+        nombreSeptimoLugar = findViewById(R.id.nombre_septimo_lugar_nuevos);
+        cantidadSeptimoLugar = findViewById(R.id.cantidad_septimo_lugar_nuevos);
+        nombreOctavoLugar = findViewById(R.id.nombre_octavo_lugar_nuevos);
+        cantidadOctavoLugar = findViewById(R.id.cantidad_octavo_lugar_nuevos);
+        nombreNovenoLugar = findViewById(R.id.nombre_noveno_lugar_nuevos);
+        cantidadNovenoLugar = findViewById(R.id.cantidad_noveno_lugar_nuevos);
+        nombreDecimoLugar = findViewById(R.id.nombre_decimo_lugar_nuevos);
+        cantidadDecimoLugar = findViewById(R.id.cantidad_decimo_lugar_nuevos);
+        nombreOnceavoLugar = findViewById(R.id.nombre_onceavo_lugar_nuevos);
+        cantidadOnceavoLugar = findViewById(R.id.cantidad_onceavo_lugar_nuevos);
+        nombreDoceavoLugar = findViewById(R.id.nombre_doceavo_lugar_nuevos);
+        cantidadDoceavoLugar = findViewById(R.id.cantidad_doceavo_lugar_nuevos);
+        nombreTreceavoLugar = findViewById(R.id.nombre_treceavo_lugar_nuevos);
+        cantidadTreceavoLugar = findViewById(R.id.cantidad_treceavo_lugar_nuevos);
+        nombreCatorceavoLugar = findViewById(R.id.nombre_catorceavo_lugar_nuevos);
+        cantidadCatorceavoLugar = findViewById(R.id.cantidad_catorceavo_lugar_nuevos);
+        nombreQuinceavoLugar = findViewById(R.id.nombre_quinceavo_lugar_nuevos);
+        cantidadQuinceavoLugar = findViewById(R.id.cantidad_quinceavo_lugar_nuevos);
+        nombreDieciseisavoLugar = findViewById(R.id.nombre_dieciseisavo_lugar_nuevos);
+        cantidadDieciseisavoLugar = findViewById(R.id.cantidad_dieciseisavo_lugar_nuevos);
 
         /**Se inflan los objetos y  se setean los listeners de eventos.*/
         volverCasosAcumuladosBtn = findViewById(R.id.volver_casos_acumulados);
@@ -109,7 +146,7 @@ public class CasosNuevos extends AppCompatActivity {
                     AllRegionRWS datos = response.body();
 
                     /**Se setea la fecha del día.*/
-                    fechaCasosNuevos.setText(datos.getFecha());
+                    fechaCasosNuevos.setText(datos.getFecha() + "*");
 
                     /**Se obtienen los nombres y los casos nuevos de la respuesta del servicio web, se crean nuevos objetos de tipo Region,
                      * y estos son agregados a un nuevo Array que posteriormente será ordenado.*/
@@ -143,6 +180,33 @@ public class CasosNuevos extends AppCompatActivity {
                             .align(Align.CENTER);
 
                     nuevosAnyChartView.setChart(pie);
+
+                    nombreCuartoLugar.setText("4. " + casosNuevosArray.get(3).getNombre() + ":");
+                    cantidadCuartoLugar.setText(String.valueOf(casosNuevosArray.get(3).getId()) + " casos");
+                    nombreQuintoLugar.setText("5. " + casosNuevosArray.get(4).getNombre() + ":");
+                    cantidadQuintoLugar.setText(String.valueOf(casosNuevosArray.get(4).getId()) + " casos");
+                    nombreSextoLugar.setText("6. " + casosNuevosArray.get(5).getNombre() + ":");
+                    cantidadSextoLugar.setText(String.valueOf(casosNuevosArray.get(5).getId()) + " casos");
+                    nombreSeptimoLugar.setText("7. " + casosNuevosArray.get(6).getNombre() + ":");
+                    cantidadSeptimoLugar.setText(String.valueOf(casosNuevosArray.get(6).getId()) + " casos");
+                    nombreOctavoLugar.setText("8. " + casosNuevosArray.get(7).getNombre() + ":");
+                    cantidadOctavoLugar.setText(String.valueOf(casosNuevosArray.get(7).getId()) + " casos");
+                    nombreNovenoLugar.setText("9. " + casosNuevosArray.get(8).getNombre() + ":");
+                    cantidadNovenoLugar.setText(String.valueOf(casosNuevosArray.get(8).getId()) + " casos");
+                    nombreDecimoLugar.setText("10. " + casosNuevosArray.get(9).getNombre() + ":");
+                    cantidadDecimoLugar.setText(String.valueOf(casosNuevosArray.get(9).getId()) + " casos");
+                    nombreOnceavoLugar.setText("11. " + casosNuevosArray.get(10).getNombre() + ":");
+                    cantidadOnceavoLugar.setText(String.valueOf(casosNuevosArray.get(10).getId()) + " casos");
+                    nombreDoceavoLugar.setText("12. " + casosNuevosArray.get(11).getNombre() + ":");
+                    cantidadDoceavoLugar.setText(String.valueOf(casosNuevosArray.get(11).getId()) + " casos");
+                    nombreTreceavoLugar.setText("13. " + casosNuevosArray.get(12).getNombre() + ":");
+                    cantidadTreceavoLugar.setText(String.valueOf(casosNuevosArray.get(12).getId()) + " casos");
+                    nombreCatorceavoLugar.setText("14. " + casosNuevosArray.get(13).getNombre() + ":");
+                    cantidadCatorceavoLugar.setText(String.valueOf(casosNuevosArray.get(13).getId()) + " casos");
+                    nombreQuinceavoLugar.setText("15. " + casosNuevosArray.get(14).getNombre() + ":");
+                    cantidadQuinceavoLugar.setText(String.valueOf(casosNuevosArray.get(14).getId()) + " casos");
+                    nombreDieciseisavoLugar.setText("16. " + casosNuevosArray.get(15).getNombre() + ":");
+                    cantidadDieciseisavoLugar.setText(String.valueOf(casosNuevosArray.get(15).getId()) + " casos");
                 }
             }
 
@@ -213,14 +277,17 @@ public class CasosNuevos extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(CasosNuevos.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(CasosNuevos.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(CasosNuevos.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);

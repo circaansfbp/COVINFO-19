@@ -35,7 +35,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alef_bold"
                         android:text="Reporte Diario"
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline3"
                         android:textColor="@color/colorPrimary"></TextView>
 
@@ -45,7 +45,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/alef_bold"
                         android:text="Revise la información y estadísticas nacionales correspondientes al día de hoy."
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline5"
                         android:textColor="@color/colorAccent"></TextView>
 
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="#46B0F0"
+                app:cardBackgroundColor="#8338EC"
                 app:cardElevation="10dp">
 
                 <LinearLayout
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alef_bold"
                         android:text="Datos por Región"
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline3"
                         android:textColor="@color/colorPrimary"></TextView>
 
@@ -96,7 +96,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/alef_bold"
                         android:text="Seleccione una región en particular para obtener sus estadísticas correspondientes al día de hoy."
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline5"
                         android:textColor="@color/colorAccent"></TextView>
 
@@ -140,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alef_bold"
                         android:text="Estadísticas Regionales"
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline3"
                         android:textColor="@color/colorPrimary"></TextView>
 
@@ -149,8 +149,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/alef_bold"
-                        android:text="Visualice las estadísticas del estado de la pandemia de todas las regiones del país."
-                        android:textAlignment="textStart"
+                        android:text="Visualice estadísticas que comparan a todas las regiones del país respecto a cuatro distintos aspectos de la pandemia COVID-19"
+                        android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceHeadline5"
                         android:textColor="@color/colorAccent"></TextView>
 

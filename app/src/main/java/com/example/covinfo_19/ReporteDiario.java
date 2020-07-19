@@ -79,7 +79,7 @@ public class ReporteDiario extends AppCompatActivity {
                     RespuestaWS datos = response.body();
 
                     /**Se setean los textos en los TextView de acuerdo a los datos recibidos en la respuesta del servicio web.*/
-                    fechaReporte.setText(datos.getFecha());
+                    fechaReporte.setText(datos.getFecha() + "*");
                     casosTotales.setText(String.valueOf(datos.getReporte().getAcumulado_total()));
                     casosNuevosTotales.setText(String.valueOf(datos.getReporte().getCasos_nuevos_total()));
                     fallecidos.setText(String.valueOf(datos.getReporte().getFallecidos()));
@@ -164,14 +164,17 @@ public class ReporteDiario extends AppCompatActivity {
             case R.id.activity1:
                 Intent intent = new Intent(ReporteDiario.this, Home.class);
                 startActivity(intent);
+                finish();
                 return false;
             case R.id.activity2:
                 Intent intent2 = new Intent(ReporteDiario.this, ReporteDiario.class);
                 startActivity(intent2);
+                finish();
                 return false;
             case R.id.activity3:
                 Intent intent3 = new Intent(ReporteDiario.this, CasosAcumulados.class);
                 startActivity(intent3);
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);
