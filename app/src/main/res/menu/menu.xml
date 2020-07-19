@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/activity5"
+        android:id="@+id/activity0"
         android:orderInCategory="100"
-        android:title=".::menu::."
+        android:title="MENU"
         app:showAsAction="always"/>
     <item
         android:id="@+id/activity1"
@@ -18,14 +18,9 @@
         android:title="Reporte Nacional"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/activity3"
-        android:orderInCategory="100"
-        android:title="Reporte de una Región"
-        app:showAsAction="never" />
 
     <item
-        android:id="@+id/activity4"
+        android:id="@+id/activity3"
         android:orderInCategory="100"
         android:title="Reporte por Regiones"
         app:showAsAction="never" />
